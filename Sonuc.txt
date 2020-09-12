@@ -1,0 +1,30 @@
+1.Rasgele Karakter:f
+2.Rasgele Karakter:r
+3.Rasgele Karakter:d
+4.Rasgele Karakter:k
+5.Rasgele Karakter:g
+6.Rasgele Karakter:u
+7.Rasgele Karakter:m
+8.Rasgele Karakter:n
+9.Rasgele Karakter:p
+10.Rasgele Karakter:w
+11.Rasgele Karakter:s
+12.Rasgele Karakter:e
+13.Rasgele Karakter:m
+14.Rasgele Karakter:l
+15.Rasgele Karakter:h
+16.Rasgele Karakter:a
+17.Rasgele Karakter:q
+
+
+############## RASTGELE KELÝME OLUÞTURMA ##############
+
+kelime:bdkfrcibfpwqaabywqu
+
+
+############## RASTGELE CÜMLE OLUÞTURMA ##############
+
+Cumle:qabfrdlibfpummjcwqbqxrsem lumtorhvpubdjchrrbgsqcgcu kfrbdjcaaarbdpukfghpumdjj ykfpurbdjemlisemhfemljxta djbdbkiyjcxtskfonokfvmpur emmlqqxtuknorxtjcxtkfdlig 
+
+Verilen iki karakter(a,o):e
+Verilen Ýki Karakter(a,o):fe

@@ -1,0 +1,67 @@
+# -*- coding: cp1254 -*-
+ths = open("D://SonucTest.txt", "w")
+karaktertoplayici1 = []#boþ bir karaktertoplayýcý adýnda bir dizi oluþturuyoruz
+
+testkarakter = []#boþ bir testkarakter adýnda bir dizi oluþturuyoruz
+import time#süre deðerlerini almak için time kütüphanesini çaðýrýyoruz
+
+
+def rasgeleKarakter(kackezuretsin1):#rasgeleKarakter adýnda tek tek sayý almak için bir method oluþturuyoruz. bu method rasgeleliði test etmek için oluþturuldu
+    formul = 1#formul deðiþkenini oluþturuyoruz.
+
+    saniye = time.time()#saniye deðiþkeninin içine 1 ocak 1970'den bu yana geçen saniye deðerini alýyoruz
+    toplam = saniye#toplam deðiþkeninin içibe atýyoruz saniye deðerini
+
+    krt = ""#krt adýnda gelen karakterleri tutacak bir deðiþkken oluþturuyoruz
+    for x in range(1, kackezuretsin1 + 1):#kaç tane sayý olmasýný belirliyor bu döngü
+        for i in range(1, 3):#bu for döngüsü deðerleri dönderiyor.
+            for j in range(1, i):#bu for döngüsü saniyeden alan deðeri rasgele çarpým kuralý için iþlem dönderiyor
+                toplam = toplam * 3#alýnan saniye deðerini 3 sayýsý ile çarpýyoruz
+
+        formul = toplam % 25#sonuç olarak aldýðýmýz deðerin sayý aralýðý olarak mod 25'ini alýyoruz. 25 sayýsý 25 tane harf olduðu için býrakýldý
+
+        if formul < 0:#saniyeden alýnan deðerler çarpým durumunda negatife düþmemesi için bir þart sundum
+            formul = formul * -1#negatif deðeri pozitif yapýyoruz
+            formul = formul + 97#en düþük ascii deðeri olan a harfi 97'ye tamamladým. deðerin alt sýnýrý belli olsun diye.
+            krt = chr(int(formul))#aldýðýmýz sayýýyý int ile ondalýklý sayýdan kurtarýp chr komutu ile karaktere çeviriyoruz ve krt içine atýyoruz
+            karaktertoplayici1.append(krt)#karaktertoplayýcý dizisine append komutu ile alýnan karakterleri ekliyoruz
+            c = str(x)#str komutu ile x deðerini döngüde alýp her defasýnda hangi karakter olduðunu elirtiyoruz. sayaç görevi görüyor.
+
+
+        else:
+            formul = formul + 97#en düþük ascii deðeri olan a harfi 97'ye tamamladým. deðerin alt sýnýrý belli olsun diye.
+            krt = chr(int(formul))#aldýðýmýz sayýýyý int ile ondalýklý sayýdan kurtarýp chr komutu ile karaktere çeviriyoruz ve krt içine atýyoruz
+            karaktertoplayici1.append(krt)#karaktertoplayýcý dizisine append komutu ile alýnan karakterleri ekliyoruz
+            c = str(x)#str komutu ile x deðerini döngüde alýp her defasýnda hangi karakter olduðunu elirtiyoruz. sayaç görevi görüyor.
+
+
+def test():# test adýnda bir method oluþturduk
+    basarilisayac = 0# basarili ve basarisiz durumlarý saymak icin int degiskenler
+    basarisizsayac = 0# basarili ve basarisiz durumlarý saymak icin int degiskenler
+    rasgeleKarakter(100)# rastgelekarakter fonksiyonundan 100 tane rastgele karakter üretiyoruz
+    for i in range(1, 101): # 100 karakter oldugu icin range de 1-11 arasý sayac donderiyoruz
+        testkarakter.append(karaktertoplayici1[i - 1])# testkarakter dizisine rastgele karakterleri ekliyoruz
+
+    for ii in range(1, 101):# test icin en bastan rastgele karakterler uretiyoruz
+        rasgeleKarakter(100)# rastgelekarakter fonksiyonundan 100 tane rastgele karakter üretiyoruz
+
+        karakter1 = str(testkarakter[ii - 1])# rastgele uretilen karakterleri string turune cevirip bos karakter1 stringine atýyoruz
+        karakter2 = str(karaktertoplayici1[ii - 1])# rastgele uretilen karakterleri string turune cevirip bos karakter2 stringine atýyoruz
+
+        if (karakter1 == karakter2):# en basta uretilen karakter ile sonradan uretilen karakter ayný mý diye kontrol ediyoruz
+            basarisizsayac = basarisizsayac + 1# ayný ise durumu basarisiz gorup basarýsýz sayacý 1 arttýrýyoruz
+
+        elif (karakter1 != karakter2):# en basta uretilen karakter ile sonradan uretilen karakter farklý mý diye kontrol ediyoruz
+            basarilisayac = basarilisayac + 1# farklý ise basarilisayac i 1 arttiriyoruz
+
+    if (basarisizsayac > basarilisayac):# eger basarisiz durum basarili durumdan buyuk ise test basarisiz
+        print("test basarili\n")
+        ths.write("Test Baþarýlý")
+
+    if (basarilisayac > basarisizsayac):# eger basarili durum basarisiz durumdan buyuk ise test basarili
+        print("test basarisiz\n")
+        ths.write("Test Baþarýsýz")
+
+test() # test fonksiyonunun cagrisini yapiyoruz
+ths.close()
+

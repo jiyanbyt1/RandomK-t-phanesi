@@ -1,0 +1,7 @@
+*Yazdýrmak için txt dosyasý otomatik olarak oluþturuyor.
+
+*2 adet txt dosyasý oluþturacak Rasgele_karakter ve Test py programlarýnýn txt dosyalarý.
+
+*Sunum anýnda program kelime ve cümle oluþturmak için seçim sunuyordu. Bu olayý kaldýrdým herþey sýrayla yazýyor.
+
+***Ahmet Jiyan Bayat***

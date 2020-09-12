@@ -1,0 +1,168 @@
+# -*- coding: cp1254 -*-
+ths = open("D://Sonuc.txt", "w")
+
+karaktertoplayici1 = []#boþ bir karaktertoplayýcý adýnda bir dizi oluþturuyoruz
+import time#süre deðerlerini almak için time kütüphanesini çaðýrýyoruz
+
+
+
+
+def rasgeleKarakter(kackezuretsin1):#rasgeleKarakter adýnda tek tek karakter almak için bir method oluþturuyoruz
+    formul = 1#formul deðiþkenini oluþturuyoruz.
+
+    saniye = time.time()#saniye deðiþkeninin içine 1 ocak 1970'den bu yana geçen saniye deðerini alýyoruz
+    toplam = saniye#toplam deðiþkeninin içibe atýyoruz saniye deðerini
+
+    krt = ""#krt adýnda gelen karakterleri tutacak bir deðiþkken oluþturuyoruz
+    for x in range(1, kackezuretsin1 + 1):#bu for döngüsü kaç tane karakter oluþturacaðýný kullanýcýdan alacak deðer ile belirliyor.
+        for i in range(1, 3):#bu for döngüsü deðerleri dönderiyor.
+            for j in range(1, i):#bu for döngüsü saniyeden alan deðeri rasgele çarpým kuralý için iþlem dönderiyor
+                toplam = toplam * 3#alýnan saniye deðerini 3 sayýsý ile çarpýyoruz
+
+        formul = toplam % 25#sonuç olarak aldýðýmýz deðerin sayý aralýðý olarak mod 25'ini alýyoruz. 25 sayýsý 25 tane harf olduðu için býrakýldý
+
+        if formul < 0:#saniyeden alýnan deðerler çarpým durumunda negatife düþmemesi için bir þart sundum
+            formul = formul * -1#negatif deðeri pozitif yapýyoruz
+            formul = formul + 97#en düþük ascii deðeri olan a harfi 97'ye tamamladým. deðerin alt sýnýrý belli olsun diye.
+            krt = chr(int(formul))#aldýðýmýz sayýýyý int ile ondalýklý sayýdan kurtarýp chr komutu ile karaktere çeviriyoruz ve krt içine atýyoruz
+            karaktertoplayici1.append(krt)#karaktertoplayýcý dizisine append komutu ile alýnan karakterleri ekliyoruz
+            c = str(x)#str komutu ile x deðerini döngüde alýp her defasýnda hangi karakter olduðunu elirtiyoruz. sayaç görevi görüyor.
+            print(c+".Rasgele Karakter:"+karaktertoplayici1[x-1])#x deðeri 1 den baþladýðý için 1 azalttýk. bu sayede dizi indeks 0 dan baþlayarak print komutu ile ekrana yazdýrýyoruz
+            ths.write(c+".Rasgele Karakter:"+karaktertoplayici1[x-1]+"\n")
+
+
+        else:#gelen deðer pozitifse
+            formul = formul + 97#en düþük ascii deðeri olan a harfi 97'ye tamamladým. deðerin alt sýnýrý belli olsun diye.
+            krt = chr(int(formul))#aldýðýmýz sayýýyý int ile ondalýklý sayýdan kurtarýp chr komutu ile karaktere çeviriyoruz ve krt içine atýyoruz
+            karaktertoplayici1.append(krt)#karaktertoplayýcý dizisine append komutu ile alýnan karakterleri ekliyoruz
+            c = str(x)#str komutu ile x deðerini döngüde alýp her defasýnda hangi karakter olduðunu elirtiyoruz. sayaç görevi görüyor.
+            print(c+".Rasgele Karakter:"+karaktertoplayici1[x-1])#x deðeri 1 den baþladýðý için 1 azalttýk. bu sayede dizi indeks 0 dan baþlayarak print komutu ile ekrana yazdýrýyoruz
+            ths.write(c + ".Rasgele Karakter:" + karaktertoplayici1[x - 1]+"\n")
+
+def Kelimeolustur(kackezuretsin):#kelime oluþruemak için method oluþturuyoruz. kaç tane kelime olmasý gerektiðini girdi olarak veriyoruz
+    formul = 1#formul deðiþkenini oluþturuyoruz.
+
+    saniye = time.time()#saniye deðiþkeninin içine 1 ocak 1970'den bu yana geçen saniye deðerini alýyoruz
+    toplam = saniye#toplam deðiþkeninin içibe atýyoruz saniye deðerini
+    krt = ""#krt adýnda gelen karakterleri tutacak bir deðiþkken oluþturuyoruz
+    karaktertoplayici2 = ""#karaktertoplayýcý adýnda gelen karakterleri tutacak bir deðiþkken oluþturuyoruz
+    for x in range(1, kackezuretsin + 1):#bu döngü kaç tane kelime üretmesi için oluþturdum
+        for i in range(1, 3):#bu for döngüsü deðerleri dönderiyor.
+            for j in range(1, i):#bu for döngüsü saniyeden alan deðeri rasgele çarpým kuralý için iþlem dönderiyor
+                toplam = toplam * 3#alýnan saniye deðerini 3 sayýsý ile çarpýyoruz
+
+        formul = toplam % 25#sonuç olarak aldýðýmýz deðerin sayý aralýðý olarak mod 25'ini alýyoruz. 25 sayýsý 25 tane harf olduðu için býrakýldý
+        if formul < 0:#saniyeden alýnan deðerler çarpým durumunda negatife düþmemesi için bir þart sundum
+            formul = formul * -1#negatif deðeri pozitif yapýyoruz
+            formul = formul + 97#en düþük ascii deðeri olan a harfi 97'ye tamamladým. deðerin alt sýnýrý belli olsun diye.
+            krt = chr(int(formul))#aldýðýmýz sayýýyý int ile ondalýklý sayýdan kurtarýp chr komutu ile karaktere çeviriyoruz ve krt içine atýyoruz
+            karaktertoplayici2+=krt#krt içindeki deðerleri karaktertoplayýcý içine atýyoruz
+            c = str(x)#str komutu ile x deðerini döngüde alýp her defasýnda hangi karakter olduðunu elirtiyoruz. sayaç görevi görüyor.
+
+
+        else:#gelen deðer pozitifse
+            formul = formul + 97#en düþük ascii deðeri olan a harfi 97'ye tamamladým. deðerin alt sýnýrý belli olsun diye.
+            krt = chr(int(formul))#aldýðýmýz sayýýyý int ile ondalýklý sayýdan kurtarýp chr komutu ile karaktere çeviriyoruz ve krt içine atýyoruz
+            karaktertoplayici2+=krt#krt içindeki deðerleri karaktertoplayýcý içine atýyoruz
+            c = str(x)#str komutu ile x deðerini döngüde alýp her defasýnda hangi karakter olduðunu elirtiyoruz. sayaç görevi görüyor.
+
+    print(karaktertoplayici2)#aldýðýmýz karakterleri kelime halinde yazdýrýyor
+    ths.write("kelime:")
+    ths.write(karaktertoplayici2)
+    ths.write("\n")
+
+def Cumleolusturma(kackezuretsin,sayi):#cümle oluþturmak için bir method oluþturduk
+    formul = 1#formul deðiþkenini oluþturuyoruz.
+
+    saniye = time.time()#saniye deðiþkeninin içine 1 ocak 1970'den bu yana geçen saniye deðerini alýyoruz
+    toplam = saniye#toplam deðiþkeninin içibe atýyoruz saniye deðerini
+    krt = ""#krt adýnda gelen karakterleri tutacak bir deðiþkken oluþturuyoruz
+    cumleolusturma = ""#cumleolusturma adýnda gelen karakterleri tutacak bir deðiþkken oluþturuyoruz
+    for a in range(1,sayi+1):#cümle içinde kaç tane kelime olmasýný kullanýcýdan alýyoruz
+        for x in range(1, kackezuretsin + 1):#kelimelerin kaç harfli olmasý için kullanýcýdan alýnan deðer ile iþlem yapmasý için döndüürüyor
+            for i in range(1, 3):#bu for döngüsü deðerleri dönderiyor.
+                for j in range(1, i):#bu for döngüsü saniyeden alan deðeri rasgele çarpým kuralý için iþlem dönderiyor
+                    toplam = toplam * 3#alýnan saniye deðerini 3 sayýsý ile çarpýyoruz
+
+            formul = toplam % 25#sonuç olarak aldýðýmýz deðerin sayý aralýðý olarak mod 25'ini alýyoruz. 25 sayýsý 25 tane harf olduðu için býrakýldý
+            if formul < 0:#saniyeden alýnan deðerler çarpým durumunda negatife düþmemesi için bir þart sundum
+                formul = formul * -1#negatif deðeri pozitif yapýyoruz
+                formul = formul + 97#en düþük ascii deðeri olan a harfi 97'ye tamamladým. deðerin alt sýnýrý belli olsun diye.
+                krt = chr(int(formul))#aldýðýmýz sayýýyý int ile ondalýklý sayýdan kurtarýp chr komutu ile karaktere çeviriyoruz ve krt içine atýyoruz
+                cumleolusturma+=krt#krt den alýnan deðerleri cumleolustur deðiþkenine atýyoruz
+                c = str(x)#str komutu ile x deðerini döngüde alýp her defasýnda hangi karakter olduðunu elirtiyoruz. sayaç görevi görüyor.
+
+
+            else:#gelen deðer pozitifse
+                formul = formul + 97#en düþük ascii deðeri olan a harfi 97'ye tamamladým. deðerin alt sýnýrý belli olsun diye.
+                krt = chr(int(formul))#aldýðýmýz sayýýyý int ile ondalýklý sayýdan kurtarýp chr komutu ile karaktere çeviriyoruz ve krt içine atýyoruz
+                cumleolusturma+=krt#krt içindeki deðerleri cumleolusturma içine atýyoruz.
+                c = str(x)#str komutu ile x deðerini döngüde alýp her defasýnda hangi karakter olduðunu elirtiyoruz. sayaç görevi görüyor.
+        cumleolusturma+=" "#oluþturulan kelimeleri ayýrmak için cumleoluþturma listesine her döngüde boþluk karakteri ekleniyor
+    print(cumleolusturma)#cumleolustur deðerini yazdýrýyoruz
+    ths.write("Cumle:")
+    ths.write(cumleolusturma+"\n\n")
+
+def VerilenIkiKarakterArasý(karakter1,karakter2):#iki karakter arasýnda rasgele deðer üretmesi için bir method oluþturuyoruz
+    formul=1#formul deðiþkenini oluþturuyoruz.
+    saniye=time.time()#saniye deðiþkeninin içine 1 ocak 1970'den bu yana geçen saniye deðerini alýyoruz
+    karakter=""#karakter adlý deðiþkene deðerler atýlýyor.
+    sayi1=int(karakter1)#alýnan ilk deðer sayi1 deðiþkenine atýyoruz
+    sayi2=int(karakter2)#alýnan son deðer sayi2 deðiþkenine atýyoruz
+    toplam=sayi2-98#burada son deðeri belirliyoruz.ascii ye göre en düþük karakterin deðeri ekliyoruz
+
+    for a in range(1,3):#yan yana veya tek yazdýrma yapmak için bu döngüyü kullanýyoruz
+        for i in range(1,3):#bu for döngüsü deðerleri dönderiyor.
+            for j in range(1,i):#bu for döngüsü saniyeden alan deðeri rasgele çarpým kuralý için iþlem dönderiyor
+                saniye=saniye*3#alýnan saniye deðerini 3 sayýsý ile çarpýyoruz
+        formul=saniye%toplam#gelen çarpým deðerini üst sýnýrý alýnan toplam deðeri ile bir sýnýr belirliyoruz
+
+        if formul<0:#saniyeden alýnan deðerler çarpým durumunda negatife düþmemesi için bir þart sundum
+            formul=formul*-1#negatif deðeri pozitif yapýyoruz
+            formul=formul+97#en düþük ascii deðeri olan a harfi 97'ye tamamladým. deðerin alt sýnýrý belli olsun diye
+
+
+            karakter+=chr(int(formul))#karakter adlý listeye ekleme yapýyoruz karaktere çevirerek
+        else:#gelen deðer pozitifse
+            formul=formul+97#en düþük ascii deðeri olan a harfi 97'ye tamamladým. deðerin alt sýnýrý belli olsun diye.
+            karakter += chr(int(formul))#karakter adlý listeye ekleme yapýyoruz karaktere çevirerek
+
+    print("Verilen Ýki Karakter("+chr(int(sayi1))+","+chr(int(sayi2))+"):" + chr(int(formul)))#verilen deðerler arasý tek karakter yazdýrýyor
+    print("Verilen Ýki Karakter("+chr(int(sayi1))+","+chr(int(sayi2))+"):" + karakter)#karakter listesi yazdýrýlýyor
+
+    ths.write("Verilen iki karakter("+chr(int(sayi1))+","+chr(int(sayi2))+"):"+chr(int(formul))+"\n")
+    ths.write("Verilen Ýki Karakter("+chr(int(sayi1))+","+chr(int(sayi2))+"):" + karakter+"\n")
+
+
+
+
+
+
+
+
+karakter1 = ""#karakter1 listesi oluþturduk
+karakter2 = ""#karakter2 listesi oluþturduk
+x=int(input("kac deger uretilsin\n"))#rasgele kaç deðer oluþturmak için deðer alýyor
+rasgeleKarakter(x)#deðeri rasgeleKarakter methoduna gönderiyor
+
+
+
+print("\n\n############## RASTGELE KELÝME OLUÞTURMA ##############\n\n")
+ths.write("\n\n############## RASTGELE KELÝME OLUÞTURMA ##############\n\n")
+y = int(input("kac harfli rasgele kelime uretilsin?\n"))#kaç harfli bir kelime oluuþturulmasýný istiyor ve input ile y ye atýyor
+Kelimeolustur(y)#alýnan y deðeri Kelimeolustur methoduna gönderiyor
+
+
+
+print("\n\n############## RASTGELE CÜMLE OLUÞTURMA ##############\n\n")
+ths.write("\n\n############## RASTGELE CÜMLE OLUÞTURMA ##############\n\n")
+kelimeuzunlugu = int(input("Cümledeki kelimeler kac harfli olsun?\n"))#kaç harfli kelime olmasý için deðer alýyor
+cumleuzunlugu=int(input("kac kelime olustursun?"))#cümlenin kaç kelime olmasýný alýyor
+Cumleolusturma(kelimeuzunlugu,cumleuzunlugu)#Cumleolusturma methhoduna gönderiyoruz deðerleri
+
+
+
+VerilenIkiKarakterArasý(97,111)#a ile o karakterleri arasýnda rasgele deðer üretmesi için program içi hethoda girdi gönderdik
+
+
+ths.close()
